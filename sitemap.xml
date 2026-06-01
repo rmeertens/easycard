@@ -2,26 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://easycard.meertens.dev/</loc></url>
   <url><loc>https://easycard.meertens.dev/about.html</loc></url>
+  <url><loc>https://easycard.meertens.dev/card.html?id=tesco</loc></url>
+  <url><loc>https://easycard.meertens.dev/card.html?id=sainsburys</loc></url>
   <url><loc>https://easycard.meertens.dev/card.html?id=albert-heijn</loc></url>
   <url><loc>https://easycard.meertens.dev/card.html?id=jumbo</loc></url>
   <url><loc>https://easycard.meertens.dev/card.html?id=kruidvat</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=etos</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=hema</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=sainsburys</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=tesco</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=morrisons</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=waitrose</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=boots</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=coop-uk</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=carrefour</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=leclerc</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=lidl</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=rewe</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=edeka</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=dm</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=decathlon</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=ikea</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=ica</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=coop-se</loc></url>
-  <url><loc>https://easycard.meertens.dev/card.html?id=migros</loc></url>
 </urlset>
