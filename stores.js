@@ -2,6 +2,75 @@
 // Codes are demo/placeholder community codes — replace with real shared
 // numbers that don't require registration where you have them.
 window.STORES = [
+  // ─── United Kingdom ───────────────────────────────────────────────
+  {
+    id: "tesco",
+    name: "Tesco",
+    program: "Clubcard",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#EE1C2E",
+    code: "6340000000019",
+    format: "CODE128",
+    note: "Clubcard Prices at checkout."
+  },
+  {
+    id: "sainsburys",
+    name: "Sainsbury's",
+    program: "Nectar",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#F06C00",
+    code: "9826000000014",
+    format: "CODE128",
+    note: "Nectar prices apply at the till."
+  },
+  {
+    id: "morrisons",
+    name: "Morrisons",
+    program: "More",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#00643C",
+    code: "6341000000018",
+    format: "CODE128",
+    note: "More Card discounts and points."
+  },
+  {
+    id: "waitrose",
+    name: "Waitrose",
+    program: "myWaitrose",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#5C8923",
+    code: "6342000000017",
+    format: "CODE128",
+    note: "Free hot drink + member offers."
+  },
+  {
+    id: "boots",
+    name: "Boots",
+    program: "Advantage Card",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#05054B",
+    code: "6343000000016",
+    format: "CODE128",
+    note: "4 points per £1 spent."
+  },
+  {
+    id: "coop-uk",
+    name: "Co-op",
+    program: "Membership",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#00B1E7",
+    code: "6344000000015",
+    format: "CODE128",
+    note: "Member prices on selected items."
+  },
+
+  // ─── Netherlands / Belgium ────────────────────────────────────────
   {
     id: "albert-heijn",
     name: "Albert Heijn",
@@ -68,72 +137,8 @@ window.STORES = [
     format: "CODE128",
     note: "Member discounts on selected items."
   },
-  {
-    id: "sainsburys",
-    name: "Sainsbury's",
-    program: "Nectar",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#F06C00",
-    code: "9826000000014",
-    format: "CODE128",
-    note: "Nectar prices apply at the till."
-  },
-  {
-    id: "tesco",
-    name: "Tesco",
-    program: "Clubcard",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#EE1C2E",
-    code: "6340000000019",
-    format: "CODE128",
-    note: "Clubcard Prices at checkout."
-  },
-  {
-    id: "morrisons",
-    name: "Morrisons",
-    program: "More",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#00643C",
-    code: "6341000000018",
-    format: "CODE128",
-    note: "More Card discounts and points."
-  },
-  {
-    id: "waitrose",
-    name: "Waitrose",
-    program: "myWaitrose",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#5C8923",
-    code: "6342000000017",
-    format: "CODE128",
-    note: "Free hot drink + member offers."
-  },
-  {
-    id: "boots",
-    name: "Boots",
-    program: "Advantage Card",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#05054B",
-    code: "6343000000016",
-    format: "CODE128",
-    note: "4 points per £1 spent."
-  },
-  {
-    id: "coop-uk",
-    name: "Co-op",
-    program: "Membership",
-    country: "United Kingdom",
-    emoji: "🇬🇧",
-    color: "#00B1E7",
-    code: "6344000000015",
-    format: "CODE128",
-    note: "Member prices on selected items."
-  },
+
+  // ─── France ───────────────────────────────────────────────────────
   {
     id: "carrefour",
     name: "Carrefour",
@@ -156,6 +161,8 @@ window.STORES = [
     format: "CODE128",
     note: "Cumul de ticket E.Leclerc."
   },
+
+  // ─── Germany ──────────────────────────────────────────────────────
   {
     id: "lidl",
     name: "Lidl",
@@ -200,28 +207,8 @@ window.STORES = [
     format: "CODE128",
     note: "Payback Punkte bei dm."
   },
-  {
-    id: "decathlon",
-    name: "Decathlon",
-    program: "Decathlon Membership",
-    country: "International",
-    emoji: "🌍",
-    color: "#0082C3",
-    code: "3045140000016",
-    format: "CODE128",
-    note: "Free returns + member benefits."
-  },
-  {
-    id: "ikea",
-    name: "IKEA",
-    program: "IKEA Family",
-    country: "International",
-    emoji: "🌍",
-    color: "#0058A3",
-    code: "7320000000016",
-    format: "CODE128",
-    note: "Member prices + free coffee."
-  },
+
+  // ─── Scandinavia & Switzerland ────────────────────────────────────
   {
     id: "ica",
     name: "ICA",
@@ -254,5 +241,29 @@ window.STORES = [
     code: "7610000000019",
     format: "CODE128",
     note: "Cumulus Punkte sammeln."
+  },
+
+  // ─── International chains ─────────────────────────────────────────
+  {
+    id: "decathlon",
+    name: "Decathlon",
+    program: "Decathlon Membership",
+    country: "International",
+    emoji: "🌍",
+    color: "#0082C3",
+    code: "3045140000016",
+    format: "CODE128",
+    note: "Free returns + member benefits."
+  },
+  {
+    id: "ikea",
+    name: "IKEA",
+    program: "IKEA Family",
+    country: "International",
+    emoji: "🌍",
+    color: "#0058A3",
+    code: "7320000000016",
+    format: "CODE128",
+    note: "Member prices + free coffee."
   }
 ];
