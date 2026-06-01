@@ -100,7 +100,7 @@ window.STORES = [
     country: "Netherlands / Belgium",
     emoji: "🇳🇱",
     color: "#005CA9",
-    code: "2750000000018",
+    code: "2621922639734",
     format: "CODE128",
     note: "Earn vouchers via the points system."
   },
