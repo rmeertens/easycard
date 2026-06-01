@@ -10,7 +10,7 @@ window.STORES = [
     country: "United Kingdom",
     emoji: "🇬🇧",
     color: "#EE1C2E",
-    code: "6340000000019",
+    code: "634000020724155902",
     format: "CODE128",
     note: "Clubcard Prices at checkout."
   },
