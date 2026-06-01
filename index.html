@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EasyCard — Loyalty card barcodes you can scan without registering</title>
+  <meta name="description" content="Free supermarket loyalty card barcodes for Albert Heijn, Tesco, Sainsbury's, Lidl, Carrefour and more. Scan at the till to unlock member discounts without registering an account." />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="canonical" href="https://easycard.meertens.dev/" />
+  <meta property="og:title" content="EasyCard — Loyalty card barcodes" />
+  <meta property="og:description" content="Free supermarket loyalty barcodes. Scan to get the member discount without signing up." />
+  <meta property="og:url" content="https://easycard.meertens.dev/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXWYNZC7YH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXWYNZC7YH');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="logo" href="/">
+        <span class="badge">EC</span>
+        <span>EasyCard</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Cards</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </header>
+
+    <h1>Loyalty card barcodes — no signup, just scan.</h1>
+    <p class="lead">
+      Pick a supermarket and show the barcode at the checkout. Get member-only
+      prices without filling in another sign-up form.
+    </p>
+
+    <div class="search-row">
+      <input id="search" type="search" placeholder="Search supermarket… (Albert Heijn, Tesco, Lidl)" autocomplete="off" />
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <footer>
+      <span>© <span id="year"></span> EasyCard · <a href="/about.html">About</a></span>
+      <span>Made by <a href="https://meertens.dev">Roland Meertens</a></span>
+    </footer>
+  </div>
+
+  <script src="stores.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const grid = document.getElementById('grid');
+    const search = document.getElementById('search');
+
+    function render(filter) {
+      const q = (filter || '').trim().toLowerCase();
+      grid.innerHTML = '';
+      const matches = STORES.filter(s =>
+        !q ||
+        s.name.toLowerCase().includes(q) ||
+        s.program.toLowerCase().includes(q) ||
+        s.country.toLowerCase().includes(q)
+      );
+      if (matches.length === 0) {
+        grid.innerHTML = '<p style="color:var(--muted)">No supermarkets matched. Try another name.</p>';
+        return;
+      }
+      for (const s of matches) {
+        const a = document.createElement('a');
+        a.className = 'store-card';
+        a.href = 'card.html?id=' + encodeURIComponent(s.id);
+        a.innerHTML = `
+          <div class="store-name">${s.emoji} ${s.name}</div>
+          <div class="store-program">${s.program}</div>
+          <div class="country">${s.country}</div>
+          <div class="swatch" style="background:${s.color}"></div>
+        `;
+        grid.appendChild(a);
+      }
+    }
+
+    search.addEventListener('input', e => render(e.target.value));
+    render('');
+  </script>
+</body>
+</html>

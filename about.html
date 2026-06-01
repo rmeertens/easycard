@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — EasyCard by Roland Meertens</title>
+  <meta name="description" content="EasyCard is a free site by Roland Meertens that shares loyalty card barcodes for supermarkets like Albert Heijn, Tesco, Sainsbury's and Lidl, so you get member discounts without signing up." />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="canonical" href="https://easycard.meertens.dev/about.html" />
+  <meta property="og:title" content="About EasyCard — Roland Meertens" />
+  <meta property="og:description" content="Why EasyCard exists and who made it." />
+  <meta property="og:url" content="https://easycard.meertens.dev/about.html" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXWYNZC7YH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXWYNZC7YH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Roland Meertens",
+    "url": "https://meertens.dev",
+    "sameAs": [
+      "https://easycard.meertens.dev",
+      "https://citytours.meertens.dev"
+    ],
+    "jobTitle": "Software engineer & researcher",
+    "knowsAbout": ["machine learning", "computer vision", "robotics"]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="logo" href="/">
+        <span class="badge">EC</span>
+        <span>EasyCard</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Cards</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </header>
+
+    <h1>About EasyCard</h1>
+    <div class="about-content">
+      <p class="lead">
+        EasyCard is a tiny free website that lists loyalty card barcodes
+        for popular supermarkets. Show the barcode at the till and you
+        get the member discount — without filling in another sign-up form,
+        installing another app, or handing over your email address.
+      </p>
+
+      <h2>Why it exists</h2>
+      <p>
+        Every supermarket has its own loyalty programme. Albert Heijn has
+        the Bonuskaart, Tesco has the Clubcard, Sainsbury's has Nectar,
+        Lidl has Lidl Plus, Carrefour has its carte fidélité, and on it
+        goes. The discounts are real — but signing up for a dozen
+        programmes means a dozen accounts, marketing emails, and apps
+        you'll never use again.
+      </p>
+      <p>
+        EasyCard collects shareable loyalty card barcodes in one place so
+        you can scan and go. Bookmark this site on your phone, pull it
+        up at the checkout, scan, done.
+      </p>
+
+      <h2>About me</h2>
+      <p>
+        Hi, I'm <strong>Roland Meertens</strong>. I'm a software
+        engineer and researcher working on machine learning, computer
+        vision and robotics. I build small free tools when I'm annoyed
+        by a problem I keep running into.
+      </p>
+      <p>
+        You can find more of my work on
+        <a href="https://meertens.dev">meertens.dev</a> and other
+        side projects under
+        <a href="https://meertens.dev"><code>*.meertens.dev</code></a>.
+      </p>
+
+      <h2>How EasyCard works</h2>
+      <ul>
+        <li>Pick a supermarket from the home page.</li>
+        <li>The barcode renders client-side in your browser using <a href="https://github.com/lindell/JsBarcode">JsBarcode</a>.</li>
+        <li>Tap <em>Fullscreen for scan</em> and hold your phone under the scanner.</li>
+        <li>No accounts, no tracking beyond standard privacy-respecting analytics.</li>
+      </ul>
+
+      <h2>A note on barcodes</h2>
+      <p>
+        The numbers on this site are community-shared loyalty codes
+        intended as a fallback for shoppers who don't want to register.
+        If a code stops working at your local store, please
+        <a href="https://github.com/rmeertens/easycard/issues">open an
+        issue on GitHub</a> and I'll update it. EasyCard does not
+        bypass payment or membership controls — it just saves you a
+        signup form to get a publicly advertised discount.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Suggestions, broken codes, or new supermarkets to add?
+        <a href="https://github.com/rmeertens/easycard">GitHub repo</a>
+        is the fastest way to reach me.
+      </p>
+    </div>
+
+    <footer>
+      <span>© <span id="year"></span> EasyCard · <a href="/">Cards</a></span>
+      <span>Made by <a href="https://meertens.dev">Roland Meertens</a></span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

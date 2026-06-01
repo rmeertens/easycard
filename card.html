@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loyalty barcode — EasyCard</title>
+  <meta name="description" content="Scan this loyalty card barcode at the supermarket till to get member prices." />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXWYNZC7YH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXWYNZC7YH');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="logo" href="/">
+        <span class="badge">EC</span>
+        <span>EasyCard</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Cards</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </header>
+
+    <a class="back-link" href="/">← All supermarkets</a>
+
+    <div id="card" class="card-panel">
+      <p style="color:var(--muted)">Loading…</p>
+    </div>
+
+    <footer>
+      <span>© <span id="year"></span> EasyCard</span>
+      <span>Made by <a href="https://meertens.dev">Roland Meertens</a></span>
+    </footer>
+  </div>
+
+  <script src="stores.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function qs(name) {
+      const m = new URLSearchParams(location.search).get(name);
+      return m || '';
+    }
+
+    const id = qs('id');
+    const store = STORES.find(s => s.id === id);
+    const card = document.getElementById('card');
+
+    if (!store) {
+      card.innerHTML = '<h1>Card not found</h1><p>Try one from <a href="/">the list</a>.</p>';
+    } else {
+      document.title = `${store.name} ${store.program} barcode — EasyCard`;
+      const desc = `Scan this ${store.name} ${store.program} barcode at the till for member prices. No sign-up needed.`;
+      document.querySelector('meta[name=description]').setAttribute('content', desc);
+
+      card.innerHTML = `
+        <h1>${store.emoji} ${store.name}</h1>
+        <p class="lead">${store.program} · ${store.country}</p>
+        <div class="barcode-stage">
+          <svg id="barcode"></svg>
+        </div>
+        <div style="text-align:center; margin: 4px 0 14px;">
+          <span class="code-text" id="codeText">${store.code}</span>
+        </div>
+        <div class="notice">${store.note}</div>
+        <div class="actions">
+          <button class="btn primary" id="fullscreen">Fullscreen for scan</button>
+          <button class="btn" id="copy">Copy number</button>
+        </div>
+        <p style="color:var(--muted); margin-top:18px; font-size:0.9rem;">
+          Tip: turn screen brightness up so the scanner reads the barcode reliably.
+        </p>
+      `;
+
+      try {
+        JsBarcode("#barcode", store.code, {
+          format: store.format || "EAN13",
+          width: 2.6,
+          height: 110,
+          displayValue: true,
+          fontSize: 16,
+          margin: 8,
+          background: "#ffffff",
+          lineColor: "#000000"
+        });
+      } catch (err) {
+        document.querySelector('.barcode-stage').innerHTML =
+          '<p style="color:#b00">Could not render barcode: ' + err.message + '</p>';
+      }
+
+      document.getElementById('copy').addEventListener('click', () => {
+        navigator.clipboard.writeText(store.code).then(() => {
+          const b = document.getElementById('copy');
+          const old = b.textContent;
+          b.textContent = 'Copied!';
+          setTimeout(() => b.textContent = old, 1500);
+        });
+      });
+
+      document.getElementById('fullscreen').addEventListener('click', () => {
+        const stage = document.querySelector('.barcode-stage');
+        if (!document.fullscreenElement) {
+          stage.requestFullscreen?.();
+        } else {
+          document.exitFullscreen?.();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
