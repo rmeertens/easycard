@@ -94,17 +94,6 @@ window.STORES = [
     note: "Use at the till for promo discounts."
   },
   {
-    id: "plus",
-    name: "PLUS",
-    program: "Klantenkaart",
-    country: "Netherlands",
-    emoji: "🇳🇱",
-    color: "#E30613",
-    code: "2710000000013",
-    format: "CODE128",
-    note: "Scan for member-only prijzen."
-  },
-  {
     id: "kruidvat",
     name: "Kruidvat",
     program: "Voordeelkaart",
