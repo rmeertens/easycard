@@ -89,7 +89,7 @@ window.STORES = [
     country: "Netherlands",
     emoji: "🇳🇱",
     color: "#FCD200",
-    code: "2700000000016",
+    code: "2622354259057",
     format: "CODE128",
     note: "Use at the till for promo discounts."
   },
