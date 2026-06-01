@@ -78,7 +78,7 @@ window.STORES = [
     country: "Netherlands",
     emoji: "🇳🇱",
     color: "#0072CE",
-    code: "2632000000017",
+    code: "2623068685576",
     format: "CODE128",
     note: "Scan at checkout for Bonus discounts. No registration required."
   },
