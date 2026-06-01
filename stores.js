@@ -24,6 +24,18 @@ window.STORES = [
     note: "Nectar prices apply at the till."
   },
 
+  {
+    id: "boots",
+    name: "Boots",
+    program: "Advantage Card",
+    country: "United Kingdom",
+    emoji: "🇬🇧",
+    color: "#05054B",
+    code: "6330357000162650910",
+    format: "CODE128",
+    note: "4 points per £1 spent."
+  },
+
   // ─── Netherlands ──────────────────────────────────────────────────
   {
     id: "albert-heijn",
