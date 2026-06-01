@@ -21,7 +21,7 @@ window.STORES = [
     country: "United Kingdom",
     emoji: "🇬🇧",
     color: "#F06C00",
-    code: "9826000000014",
+    code: "9826300079614571032",
     format: "CODE128",
     note: "Nectar prices apply at the till."
   },
