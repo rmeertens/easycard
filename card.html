@@ -108,12 +108,35 @@
       });
 
       document.getElementById('fullscreen').addEventListener('click', () => {
-        const stage = document.querySelector('.barcode-stage');
-        if (!document.fullscreenElement) {
-          stage.requestFullscreen?.();
-        } else {
-          document.exitFullscreen?.();
-        }
+        const overlay = document.createElement('div');
+        overlay.className = 'scan-overlay';
+        overlay.innerHTML = `
+          <svg id="bigBarcode"></svg>
+          <div class="scan-hint">Tap anywhere to close · tap card to rotate</div>
+        `;
+        document.body.appendChild(overlay);
+        try {
+          JsBarcode("#bigBarcode", store.code, {
+            format: store.format || "CODE128",
+            width: 3,
+            height: 180,
+            displayValue: true,
+            fontSize: 22,
+            margin: 12,
+            background: "#ffffff",
+            lineColor: "#000000"
+          });
+        } catch (err) {}
+        const svg = overlay.querySelector('svg');
+        svg.addEventListener('click', e => {
+          e.stopPropagation();
+          overlay.classList.toggle('rotated');
+        });
+        overlay.addEventListener('click', () => overlay.remove());
+        const escHandler = e => {
+          if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', escHandler); }
+        };
+        document.addEventListener('keydown', escHandler);
       });
     }
   </script>
